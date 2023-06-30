@@ -51,7 +51,8 @@ export const HandSketch = ({ handpose }: Props) => {
       p5.translate(p5.width / 2 - 300, p5.height / 2 + 300);
       let totalHeight = 0;
       for (let i = 0; i < 5; i++) {
-        const dist = hands.left[4 * i + 4].y - hands.left[4 * i + 1].y;
+        const dist =
+          (hands.left[4 * i + 4].y - hands.left[4 * i + 1].y) / 5 - 50;
         p5.ellipse(0, dist + totalHeight, 2 * dist);
         totalHeight += 2 * dist;
       }
@@ -62,7 +63,8 @@ export const HandSketch = ({ handpose }: Props) => {
       p5.translate(p5.width / 2 + 300, p5.height / 2 + 300);
       let totalHeight = 0;
       for (let i = 0; i < 5; i++) {
-        const dist = hands.right[4 * i + 4].y - hands.right[4 * i + 1].y;
+        const dist =
+          (hands.right[4 * i + 4].y - hands.right[4 * i + 1].y) / 5 - 50;
         p5.ellipse(0, dist + totalHeight, 2 * dist);
         totalHeight += 2 * dist;
       }
